@@ -1,20 +1,20 @@
 """
 ╔══════════════════╗
-              TEAMDEV
+              BOTXCORE
 ╚══════════════════╝
 
-[ PROJECT   ]  TeamDev AIO (All-In-One Downloader)
-[ DEVELOPER ]  @MR_ARMAN_08
+[ PROJECT   ]  BotXCore AIO (All-In-One Downloader)
+[ DEVELOPER ]  xD3VS
 
 ────────────────────
 
-[ SUPPORT   ]  https://t.me/Team_X_Og
-[ UPDATES   ]  https://t.me/TeamDevXBots
-[ ABOUT US  ]  https://TeamDev.sbs
+[ SUPPORT   ]  https://t.me/BotXCore
+[ UPDATES   ]  https://t.me/BotXCore
+[ ABOUT US  ]  https://BotXCore.sbs
 
 ────────────────────
 
-[ DONATE    ]  https://Pay.TeamDev.sbs
+[ DONATE    ]  https://Pay.BotXCore.sbs
 
 ────────────────────
       FAST • POWERFUL • ALL-IN-ONE
@@ -44,7 +44,7 @@ async def lifespan(app: FastAPI):
     yield
 
 app = FastAPI(
-    title="TeamDev AIO API",
+    title="BotXCore AIO API",
     version="2.0.0",
     docs_url=None,
     redoc_url=None,
@@ -81,9 +81,9 @@ async def robots():
 async def sitemap():
     return FileResponse("sitemap.xml", media_type="application/xml")
 
-@app.get("/TeamDev-Logo.jpg", include_in_schema=False)
+@app.get("/BotXCore-Logo.jpg", include_in_schema=False)
 async def logo():
-    return FileResponse("TeamDev-Logo.jpg", media_type="image/jpeg")
+    return FileResponse("BotXCore-Logo.jpg", media_type="image/jpeg")
 
 @app.get("/health")
 async def health():

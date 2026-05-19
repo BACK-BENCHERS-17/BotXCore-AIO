@@ -1,20 +1,20 @@
 """
 ╔══════════════════╗
-              TEAMDEV
+              BOTXCORE
 ╚══════════════════╝
 
-[ PROJECT   ]  TeamDev AIO (All-In-One Downloader)
-[ DEVELOPER ]  @MR_ARMAN_08
+[ PROJECT   ]  BotXCore AIO (All-In-One Downloader)
+[ DEVELOPER ]  xD3VS
 
 ────────────────────
 
-[ SUPPORT   ]  https://t.me/Team_X_Og
-[ UPDATES   ]  https://t.me/TeamDevXBots
-[ ABOUT US  ]  https://TeamDev.sbs
+[ SUPPORT   ]  https://t.me/BotXCore
+[ UPDATES   ]  https://t.me/BotXCore
+[ ABOUT US  ]  https://BotXCore.sbs
 
 ────────────────────
 
-[ DONATE    ]  https://Pay.TeamDev.sbs
+[ DONATE    ]  https://Pay.BotXCore.sbs
 
 ────────────────────
       FAST • POWERFUL • ALL-IN-ONE
@@ -36,7 +36,7 @@ router = APIRouter(tags=["Admin"])
 templates = Jinja2Templates(directory="templates")
 
 async def require_admin(request: Request):
-    token = request.cookies.get("td_token") or request.headers.get("Authorization", "").replace("Bearer ", "")
+    token = request.cookies.get("bx_token") or request.headers.get("Authorization", "").replace("Bearer ", "")
     if not token:
         raise HTTPException(status_code=401, detail="not_authenticated")
     try:
@@ -49,7 +49,7 @@ async def require_admin(request: Request):
 
 @router.get("/", response_class=HTMLResponse)
 async def admin_panel(request: Request):
-    token = request.cookies.get("td_token")
+    token = request.cookies.get("bx_token")
     if not token:
         return RedirectResponse("/admin/login")
     try:
@@ -65,7 +65,7 @@ async def admin_login_page(request: Request):
 @router.post("/logout")
 async def logout():
     r = RedirectResponse("/admin/login", status_code=302)
-    r.delete_cookie("td_token")
+    r.delete_cookie("bx_token")
     return r
 
 class CreateKeyRequest(BaseModel):

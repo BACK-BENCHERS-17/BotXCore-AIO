@@ -1,20 +1,20 @@
 """
 ╔══════════════════╗
-              TEAMDEV
+              BOTXCORE
 ╚══════════════════╝
 
-[ PROJECT   ]  TeamDev AIO (All-In-One Downloader)
-[ DEVELOPER ]  @MR_ARMAN_08
+[ PROJECT   ]  BotXCore AIO (All-In-One Downloader)
+[ DEVELOPER ]  xD3VS
 
 ────────────────────
 
-[ SUPPORT   ]  https://t.me/Team_X_Og
-[ UPDATES   ]  https://t.me/TeamDevXBots
-[ ABOUT US  ]  https://TeamDev.sbs
+[ SUPPORT   ]  https://t.me/BotXCore
+[ UPDATES   ]  https://t.me/BotXCore
+[ ABOUT US  ]  https://BotXCore.sbs
 
 ────────────────────
 
-[ DONATE    ]  https://Pay.TeamDev.sbs
+[ DONATE    ]  https://Pay.BotXCore.sbs
 
 ────────────────────
       FAST • POWERFUL • ALL-IN-ONE
@@ -26,7 +26,7 @@ from motor.motor_asyncio import AsyncIOMotorClient
 from datetime import datetime
 
 MONGO_URI = os.getenv("MONGO_URI", "ADD INVOIRMENTS VARIABLE")
-DB_NAME = os.getenv("DB_NAME", "teamdev_aio")
+DB_NAME = os.getenv("DB_NAME", "botxcore_aio")
 
 client: AsyncIOMotorClient = None
 db = None
@@ -55,7 +55,7 @@ async def _seed_admin():
     if not existing:
         await db.admins.insert_one({
             "username": "admin",
-            "password": hash_password("TeamDev@2026"),
+            "password": hash_password("BotXCore@2026"),
             "created_at": datetime.utcnow()
         })
     await db.settings.update_one(

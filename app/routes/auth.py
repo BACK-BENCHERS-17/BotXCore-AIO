@@ -1,20 +1,20 @@
 """
 ╔══════════════════╗
-              TEAMDEV
+              BOTXCORE
 ╚══════════════════╝
 
-[ PROJECT   ]  TeamDev AIO (All-In-One Downloader)
-[ DEVELOPER ]  @MR_ARMAN_08
+[ PROJECT   ]  BotXCore AIO (All-In-One Downloader)
+[ DEVELOPER ]  xD3VS
 
 ────────────────────
 
-[ SUPPORT   ]  https://t.me/Team_X_Og
-[ UPDATES   ]  https://t.me/TeamDevXBots
-[ ABOUT US  ]  https://TeamDev.sbs
+[ SUPPORT   ]  https://t.me/BotXCore
+[ UPDATES   ]  https://t.me/BotXCore
+[ ABOUT US  ]  https://BotXCore.sbs
 
 ────────────────────
 
-[ DONATE    ]  https://Pay.TeamDev.sbs
+[ DONATE    ]  https://Pay.BotXCore.sbs
 
 ────────────────────
       FAST • POWERFUL • ALL-IN-ONE
@@ -42,5 +42,5 @@ async def login(body: LoginRequest, response: Response):
         raise HTTPException(status_code=401, detail="invalid_credentials")
 
     token = create_access_token({"sub": body.username, "role": "admin"})
-    response.set_cookie("td_token", token, httponly=True, samesite="lax", max_age=86400)
+    response.set_cookie("bx_token", token, httponly=True, samesite="lax", max_age=86400)
     return {"token": token, "username": body.username}

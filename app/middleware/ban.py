@@ -1,20 +1,20 @@
 """
 ╔══════════════════╗
-              TEAMDEV
+              BOTXCORE
 ╚══════════════════╝
 
-[ PROJECT   ]  TeamDev AIO (All-In-One Downloader)
-[ DEVELOPER ]  @MR_ARMAN_08
+[ PROJECT   ]  BotXCore AIO (All-In-One Downloader)
+[ DEVELOPER ]  xD3VS
 
 ────────────────────
 
-[ SUPPORT   ]  https://t.me/Team_X_Og
-[ UPDATES   ]  https://t.me/TeamDevXBots
-[ ABOUT US  ]  https://TeamDev.sbs
+[ SUPPORT   ]  https://t.me/BotXCore
+[ UPDATES   ]  https://t.me/BotXCore
+[ ABOUT US  ]  https://BotXCore.sbs
 
 ────────────────────
 
-[ DONATE    ]  https://Pay.TeamDev.sbs
+[ DONATE    ]  https://Pay.BotXCore.sbs
 
 ────────────────────
       FAST • POWERFUL • ALL-IN-ONE
@@ -43,7 +43,7 @@ class BanMiddleware(BaseHTTPMiddleware):
                     content={
                         "error": "ip_banned",
                         "reason": banned.get("reason", "Policy violation"),
-                        "msg": "Your IP has been banned. Contact support. @TeamDevXBots"
+                        "msg": "Your IP has been banned. Contact support. @BotXCore"
                     }
                 )
 

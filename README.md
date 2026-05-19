@@ -1,17 +1,17 @@
 <div align="center">
 
-<img src="static/teamdev-logo-hd.jpg" alt="TeamDev Logo" width="220" style="border-radius:16px;" />
+<img src="static/botxcore-logo-hd.jpg" alt="BotXCore Logo" width="220" style="border-radius:16px;" />
 
 <br/>
 
 ```
 ╔══════════════════════════════════════════════════════╗
-                    T E A M D E V
+                    B O T X C O R E
          FAST  •  POWERFUL  •  ALL-IN-ONE
 ╚══════════════════════════════════════════════════════╝
 ```
 
-# TeamDev AIO ── All-In-One Downloader API
+# BotXCore AIO ── All-In-One Downloader API
 
 **A blazing-fast, production-grade media download REST API**  
 Built with FastAPI · MongoDB · Python 3.11 · Docker
@@ -22,24 +22,24 @@ Built with FastAPI · MongoDB · Python 3.11 · Docker
 [![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com)
 [![MongoDB](https://img.shields.io/badge/MongoDB-Motor-47A248?style=for-the-badge&logo=mongodb)](https://mongodb.com)
-[![License](https://img.shields.io/badge/License-Proprietary-red?style=for-the-badge)](https://TeamDev.sbs)
+[![License](https://img.shields.io/badge/License-Proprietary-red?style=for-the-badge)](https://BotXCore.sbs)
 
 <br/>
 
 ```
-[ PROJECT   ]  TeamDev AIO (All-In-One Downloader)
-[ DEVELOPER ]  @MR_ARMAN_08
+[ PROJECT   ]  BotXCore AIO (All-In-One Downloader)
+[ DEVELOPER ]  xD3VS
 [ VERSION   ]  v2.0.0
 
 ────────────────────────────────────
 
-[ SUPPORT   ]  https://t.me/Team_X_Og
-[ UPDATES   ]  https://t.me/TeamDevXBots
-[ ABOUT US  ]  https://TeamDev.sbs
+[ SUPPORT   ]  https://t.me/BotXCore
+[ UPDATES   ]  https://t.me/BotXCore
+[ ABOUT US  ]  https://BotXCore.sbs
 
 ────────────────────────────────────
 
-[ DONATE    ]  https://Pay.TeamDev.sbs
+[ DONATE    ]  https://Pay.BotXCore.sbs
 
 ────────────────────────────────────
 ```
@@ -98,7 +98,7 @@ One unified endpoint handles **20+ platforms** — no per-platform keys required
 - Generate, revoke, enable/disable keys with one click
 - Per-key rate limits configurable independently
 - Key expiry dates, usage counters, last-used timestamps
-- `td_` prefixed tokens via cryptographically secure generation
+- `bx_` prefixed tokens via cryptographically secure generation
 
 ### ◆ Intelligent Rate Limiting
 - Per-IP and per-API-key rate buckets (independent sliding windows)
@@ -173,7 +173,7 @@ Request ──► BanMiddleware ──► RateLimitMiddleware ──► Auth (AP
 |---|---|---|
 | `MONGO_URI` | **YES** | Your MongoDB Atlas connection string |
 | `SECRET_KEY` | auto | JWT signing secret — Railway generates this |
-| `DB_NAME` | no | Database name (default: `teamdev_aio`) |
+| `DB_NAME` | no | Database name (default: `botxcore_aio`) |
 
 ### After Deploy
 
@@ -181,7 +181,7 @@ Request ──► BanMiddleware ──► RateLimitMiddleware ──► Auth (AP
 2. Login with default credentials:
    ```
    Username : admin
-   Password : TeamDev@2026
+   Password : BotXCore@2026
    ```
 3. **Change your password immediately** from the admin panel
 4. Generate your first API key and start making requests
@@ -196,18 +196,18 @@ Pass your API key in any of these ways:
 
 ```bash
 # Query parameter (easiest)
-GET /api/v1/dl?url=https://youtu.be/dQw4w9WgXcQ&api=td_YOUR_KEY
+GET /api/v1/dl?url=https://youtu.be/dQw4w9WgXcQ&api=bx_YOUR_KEY
 
 # Header (recommended for production)
 GET /api/v1/dl?url=https://youtu.be/dQw4w9WgXcQ
-X-API-Key: td_YOUR_KEY
+X-API-Key: bx_YOUR_KEY
 ```
 
 ### Universal Download ── `/api/v1/dl`
 
 **Request:**
 ```http
-GET /api/v1/dl?url=https://www.youtube.com/watch?v=dQw4w9WgXcQ&api=td_xxx
+GET /api/v1/dl?url=https://www.youtube.com/watch?v=dQw4w9WgXcQ&api=bx_xxx
 ```
 
 **Response:**
@@ -232,7 +232,7 @@ GET /api/v1/dl?url=https://www.youtube.com/watch?v=dQw4w9WgXcQ&api=td_xxx
 ### Spotify ── `/api/v1/s`
 
 ```http
-GET /api/v1/s?url=https://open.spotify.com/track/xxx&api=td_xxx
+GET /api/v1/s?url=https://open.spotify.com/track/xxx&api=bx_xxx
 ```
 
 ```json
@@ -249,7 +249,7 @@ GET /api/v1/s?url=https://open.spotify.com/track/xxx&api=td_xxx
 ### Terabox ── `/api/v1/tb`
 
 ```http
-GET /api/v1/tb?url=https://1024terabox.com/s/xxx&api=td_xxx
+GET /api/v1/tb?url=https://1024terabox.com/s/xxx&api=bx_xxx
 ```
 
 ```json
@@ -284,19 +284,19 @@ GET /api/v1/tb?url=https://1024terabox.com/s/xxx&api=td_xxx
 
 ```bash
 # Clone the repo
-git clone https://github.com/justfortestingnothibghere/TeamDev-AIO
-cd teamdev-aio
+git clone https://github.com/justfortestingnothibghere/BotXCore-AIO
+cd botxcore-aio
 
 # Build the image
-docker build -t teamdev-aio .
+docker build -t botxcore-aio .
 
 # Run with your MongoDB URI
 docker run -d \
   -p 8000:8000 \
-  -e MONGO_URI="mongodb+srv://user:pass@cluster.mongodb.net/teamdev_aio" \
+  -e MONGO_URI="mongodb+srv://user:pass@cluster.mongodb.net/botxcore_aio" \
   -e SECRET_KEY="your-super-secret-key" \
-  --name teamdev-aio \
-  teamdev-aio
+  --name botxcore-aio \
+  botxcore-aio
 ```
 
 App will be live at `http://localhost:8000`  
@@ -309,8 +309,8 @@ Admin panel at `http://localhost:8000/admin`
 ```bash
 # Prerequisites: Python 3.11+, MongoDB
 
-git clone https://github.com/YOUR_USERNAME/teamdev-aio.git
-cd teamdev-aio
+git clone https://github.com/YOUR_USERNAME/botxcore-aio.git
+cd botxcore-aio
 
 pip install -r requirements.txt
 playwright install chromium
@@ -327,7 +327,7 @@ python main.py
 ## ◈ Project Structure
 
 ```
-teamdev-aio/
+botxcore-aio/
 ├── main.py                    ◄  FastAPI app entry point
 ├── requirements.txt           ◄  Python dependencies
 ├── Dockerfile                 ◄  Production container
@@ -366,7 +366,7 @@ teamdev-aio/
 │   └── login.html             ◄  Admin login
 │
 └── static/
-    ├── teamdev-logo-hd.jpg    ◄  HD logo
+    ├── botxcore-logo-hd.jpg    ◄  HD logo
     ├── og-image.jpg           ◄  Open Graph preview image
     └── favicon-*.png          ◄  Icons for all devices
 ```
@@ -423,7 +423,7 @@ favicon      ──  16px, 32px, 180px apple-touch-icon — all browsers covered
 | Settings | Toggle API enforcement on/off (open mode for testing) |
 | Terabox Keys | Pool third-party Terabox API keys for load balancing |
 
-Default login: `admin` / `TeamDev@2026`  
+Default login: `admin` / `BotXCore@2026`  
 **Change password immediately after first login.**
 
 ---
@@ -447,11 +447,11 @@ Default login: `admin` / `TeamDev@2026`
 
 ## ◈ License
 
-This project is **proprietary software** built by TeamDev.  
+This project is **proprietary software** built by BotXCore.  
 Do not copy, redistribute, or repurpose this code without written permission.
 
 ```
-© 2026 TeamDev (@MR_ARMAN_08) — All rights reserved.
+© 2026 BotXCore (xD3VS) — All rights reserved.
 Read license header in each source file before use.
 ```
 
@@ -464,20 +464,20 @@ Read license header in each source file before use.
 ```
 ┌────────────────────────────────────────────────────────┐
 │                                                        │
-│   SUPPORT    ──  https://t.me/Team_X_Og               │
-│   UPDATES    ──  https://t.me/TeamDevXBots            │
-│   WEBSITE    ──  https://TeamDev.sbs                  │
-│   DONATE     ──  https://Pay.TeamDev.sbs              │
-│   DEVELOPER  ──  @MR_ARMAN_08  (Telegram)             │
+│   SUPPORT    ──  https://t.me/BotXCore               │
+│   UPDATES    ──  https://t.me/BotXCore            │
+│   WEBSITE    ──  https://BotXCore.sbs                  │
+│   DONATE     ──  https://Pay.BotXCore.sbs              │
+│   DEVELOPER  ──  xD3VS  (Telegram)             │
 │                                                        │
 └────────────────────────────────────────────────────────┘
 ```
 
-<img src="TeamDev-Logo.jpg" alt="TeamDev Banner" width="480" />
+<img src="BotXCore-Logo.jpg" alt="BotXCore Banner" width="480" />
 
 <br/>
 
-**Built with dedication by [@MR_ARMAN_08](https://t.me/MR_ARMAN_08)**  
+**Built with dedication by [xD3VS](https://t.me/xD3VS)**  
 *FAST · POWERFUL · ALL-IN-ONE*
 
 </div>

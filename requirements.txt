@@ -10,7 +10,4 @@ requests==2.32.3
 yt-dlp==2024.10.7
 beautifulsoup4==4.12.3
 httpx
-playwright
-camoufox
-seleniumbase
 colorama

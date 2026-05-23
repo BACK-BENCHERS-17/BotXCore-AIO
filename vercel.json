@@ -1,0 +1,17 @@
+{
+  "installCommand": "pip install -r requirements-vercel.txt",
+  "env": {
+    "MONGO_URI": "mongodb+srv://bb:bb@cluster0.wvo3g4y.mongodb.net/?appName=Cluster0",
+    "SECRET_KEY": "048e07e3548f48f8e7941ed223e6261572da1243c123b30209457577020a1e57"
+  },
+  "builds": [
+    {
+      "src": "api/index.py",
+      "use": "@vercel/python",
+      "config": { "asgi": true }
+    }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "api/index.py" }
+  ]
+}

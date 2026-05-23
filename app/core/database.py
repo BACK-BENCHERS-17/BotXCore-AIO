@@ -1,31 +1,8 @@
-"""
-╔══════════════════╗
-              BOTXCORE
-╚══════════════════╝
-
-[ PROJECT   ]  BotXCore AIO (All-In-One Downloader)
-[ DEVELOPER ]  xD3VS
-
-────────────────────
-
-[ SUPPORT   ]  https://t.me/BotXCore
-[ UPDATES   ]  https://t.me/BotXCore
-[ ABOUT US  ]  https://BotXCore.sbs
-
-────────────────────
-
-[ DONATE    ]  https://Pay.BotXCore.sbs
-
-────────────────────
-      FAST • POWERFUL • ALL-IN-ONE
-      
-"""
-
 import os
 from motor.motor_asyncio import AsyncIOMotorClient
 from datetime import datetime
 
-MONGO_URI = os.getenv("MONGO_URI", "ADD INVOIRMENTS VARIABLE")
+MONGO_URI = os.getenv("MONGO_URI", "")
 DB_NAME = os.getenv("DB_NAME", "botxcore_aio")
 
 client: AsyncIOMotorClient = None
@@ -33,10 +10,17 @@ db = None
 
 async def init_db():
     global client, db
-    client = AsyncIOMotorClient(MONGO_URI)
-    db = client[DB_NAME]
-    await _ensure_indexes()
-    await _seed_admin()
+    if not MONGO_URI:
+        return
+    try:
+        client = AsyncIOMotorClient(MONGO_URI, serverSelectionTimeoutMS=5000)
+        db = client[DB_NAME]
+        await client.admin.command('ping')
+        await _ensure_indexes()
+        await _seed_admin()
+    except Exception:
+        client = None
+        db = None
 
 async def _ensure_indexes():
     await db.api_keys.create_index("key", unique=True)
@@ -51,11 +35,11 @@ async def _ensure_indexes():
 
 async def _seed_admin():
     from app.core.security import hash_password
-    existing = await db.admins.find_one({"username": "admin"})
+    existing = await db.admins.find_one({"username": "xD3VS"})
     if not existing:
         await db.admins.insert_one({
-            "username": "admin",
-            "password": hash_password("BotXCore@2026"),
+            "username": "xD3VS",
+            "password": hash_password("BotXCore"),
             "created_at": datetime.utcnow()
         })
     await db.settings.update_one(

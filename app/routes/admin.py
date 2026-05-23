@@ -1,27 +1,3 @@
-"""
-╔══════════════════╗
-              BOTXCORE
-╚══════════════════╝
-
-[ PROJECT   ]  BotXCore AIO (All-In-One Downloader)
-[ DEVELOPER ]  xD3VS
-
-────────────────────
-
-[ SUPPORT   ]  https://t.me/BotXCore
-[ UPDATES   ]  https://t.me/BotXCore
-[ ABOUT US  ]  https://BotXCore.sbs
-
-────────────────────
-
-[ DONATE    ]  https://Pay.BotXCore.sbs
-
-────────────────────
-      FAST • POWERFUL • ALL-IN-ONE
-      
-"""
-
-
 from fastapi import APIRouter, HTTPException, Request, Depends
 from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
@@ -52,9 +28,8 @@ async def admin_panel(request: Request):
     token = request.cookies.get("bx_token")
     if not token:
         return RedirectResponse("/admin/login")
-    try:
-        decode_token(token)
-    except Exception:
+    payload = decode_token(token)
+    if payload is None:
         return RedirectResponse("/admin/login")
     return templates.TemplateResponse("admin.html", {"request": request})
 

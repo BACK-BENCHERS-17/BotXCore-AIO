@@ -1,27 +1,3 @@
-"""
-╔══════════════════╗
-              BOTXCORE
-╚══════════════════╝
-
-[ PROJECT   ]  BotXCore AIO (All-In-One Downloader)
-[ DEVELOPER ]  xD3VS
-
-────────────────────
-
-[ SUPPORT   ]  https://t.me/BotXCore
-[ UPDATES   ]  https://t.me/BotXCore
-[ ABOUT US  ]  https://BotXCore.sbs
-
-────────────────────
-
-[ DONATE    ]  https://Pay.BotXCore.sbs
-
-────────────────────
-      FAST • POWERFUL • ALL-IN-ONE
-      
-"""
-
-
 from fastapi import APIRouter, HTTPException, Response, Request
 from pydantic import BaseModel
 from app.core.database import get_db

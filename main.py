@@ -1,27 +1,4 @@
-"""
-╔══════════════════╗
-              BOTXCORE
-╚══════════════════╝
-
-[ PROJECT   ]  BotXCore AIO (All-In-One Downloader)
-[ DEVELOPER ]  xD3VS
-
-────────────────────
-
-[ SUPPORT   ]  https://t.me/BotXCore
-[ UPDATES   ]  https://t.me/BotXCore
-[ ABOUT US  ]  https://BotXCore.sbs
-
-────────────────────
-
-[ DONATE    ]  https://Pay.BotXCore.sbs
-
-────────────────────
-      FAST • POWERFUL • ALL-IN-ONE
-      
-"""
-
-# Read @License Don't Copy This File This Code Made Only For This Project Do Not Try To Use This Script.
+import asyncio
 
 import uvicorn
 from fastapi import FastAPI, Request

@@ -1,25 +1,4 @@
-"""
-╔══════════════════╗
-              BOTXCORE
-╚══════════════════╝
 
-[ PROJECT   ]  BotXCore AIO (All-In-One Downloader)
-[ DEVELOPER ]  xD3VS
-
-────────────────────
-
-[ SUPPORT   ]  https://t.me/BotXCore
-[ UPDATES   ]  https://t.me/BotXCore
-[ ABOUT US  ]  https://BotXCore.sbs
-
-────────────────────
-
-[ DONATE    ]  https://Pay.BotXCore.sbs
-
-────────────────────
-      FAST • POWERFUL • ALL-IN-ONE
-      
-"""
 
 
 import time

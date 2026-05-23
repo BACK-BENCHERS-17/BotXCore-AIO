@@ -1,31 +1,9 @@
-"""
-╔══════════════════╗
-              BOTXCORE
-╚══════════════════╝
 
-[ PROJECT   ]  BotXCore AIO (All-In-One Downloader)
-[ DEVELOPER ]  xD3VS
-
-────────────────────
-
-[ SUPPORT   ]  https://t.me/BotXCore
-[ UPDATES   ]  https://t.me/BotXCore
-[ ABOUT US  ]  https://BotXCore.sbs
-
-────────────────────
-
-[ DONATE    ]  https://Pay.BotXCore.sbs
-
-────────────────────
-      FAST • POWERFUL • ALL-IN-ONE
-      
-"""
 
 # This Will Not Work On Railway Deploy The Project On Your VPS 
 
 import asyncio
 from concurrent.futures import ThreadPoolExecutor
-from camoufox.sync_api import Camoufox
 
 _executor = ThreadPoolExecutor(max_workers=3)
 
@@ -34,6 +12,7 @@ def _is_valid_spotify(url: str) -> bool:
 
 def _sync_fetch(url: str) -> tuple:
     try:
+        from camoufox.sync_api import Camoufox
         with Camoufox(headless=True, geoip=True) as browser:
             page = browser.new_page()
 

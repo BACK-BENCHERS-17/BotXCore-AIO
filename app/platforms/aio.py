@@ -11,8 +11,10 @@ _HEADERS = {
 }
 
 def clean_url(url: str) -> str:
+    if "youtube.com" in url or "youtu.be" in url:
+        return url
     if "?" in url:
-        url = url.split("?")[0]
+        return url
     if not url.endswith("/"):
         url += "/"
     return url

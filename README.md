@@ -378,15 +378,15 @@ botxcore-aio/
 Your API ships with full SEO infrastructure already in place. Follow these steps to get indexed:
 
 ### Step 1 ── Update sitemap.xml
-Replace `your-api-domain.com` with your actual Railway/custom domain:
+Replace `aio.botxcore.eu.cc` with your actual Railway/custom domain:
 ```xml
-<loc>https://your-actual-domain.com/</loc>
+<loc>https://aio.botxcore.eu.cc/</loc>
 ```
 
 ### Step 2 ── Update robots.txt
 Edit the `Sitemap:` line at the bottom of `robots.txt`:
 ```
-Sitemap: https://your-actual-domain.com/sitemap.xml
+Sitemap: https://aio.botxcore.eu.cc/sitemap.xml
 ```
 
 ### Step 3 ── Submit to Google Search Console
@@ -481,3 +481,4 @@ Read license header in each source file before use.
 *FAST · POWERFUL · ALL-IN-ONE*
 
 </div>
+iv>

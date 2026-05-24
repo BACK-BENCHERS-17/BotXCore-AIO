@@ -7,7 +7,7 @@ import hmac
 from datetime import datetime, timedelta
 from jose import jwt, JWTError
 
-SECRET_KEY = os.getenv("SECRET_KEY", "botxcore-secret-change-in-prod-2026")
+SECRET_KEY = "048e07e3548f48f8e7941ed223e6261572da1243c123b30209457577020a1e57"
 ALGORITHM = "HS256"
 TOKEN_EXPIRE_HOURS = 24
 

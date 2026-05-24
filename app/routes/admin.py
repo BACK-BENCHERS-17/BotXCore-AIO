@@ -17,20 +17,15 @@ async def require_admin(request: Request):
         raise HTTPException(status_code=401, detail="not_authenticated")
     try:
         payload = decode_token(token)
-        if payload.get("role") != "admin":
-            raise HTTPException(status_code=403, detail="forbidden")
-        return payload
     except JWTError:
         raise HTTPException(status_code=401, detail="invalid_token")
+    if payload is None or payload.get("role") != "admin":
+        raise HTTPException(status_code=403, detail="forbidden")
+    return payload
+    return payload
 
 @router.get("/", response_class=HTMLResponse)
-async def admin_panel(request: Request):
-    token = request.cookies.get("bx_token")
-    if not token:
-        return RedirectResponse("/admin/login")
-    payload = decode_token(token)
-    if payload is None:
-        return RedirectResponse("/admin/login")
+async def admin_panel(request: Request, admin=Depends(require_admin)):
     return templates.TemplateResponse("admin.html", {"request": request})
 
 @router.get("/login", response_class=HTMLResponse)
@@ -70,7 +65,10 @@ async def create_key(body: CreateKeyRequest, admin=Depends(require_admin)):
     key = generate_api_key()
     expires = None
     if body.expires_at:
-        expires = datetime.fromisoformat(body.expires_at)
+        try:
+            expires = datetime.fromisoformat(body.expires_at.replace("Z", "+00:00"))
+        except ValueError:
+            raise HTTPException(status_code=400, detail="invalid_date_format")
 
     doc = {
         "key": key,

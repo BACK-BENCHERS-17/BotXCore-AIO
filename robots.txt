@@ -4,4 +4,4 @@ Disallow: /admin/
 Disallow: /auth/
 Disallow: /api/
 
-Sitemap: http://YOUR_VPS_IP:8000/sitemap.xml
+Sitemap: https://aio.botxcore.eu.cc/sitemap.xml

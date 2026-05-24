@@ -2,8 +2,8 @@ import os
 from motor.motor_asyncio import AsyncIOMotorClient
 from datetime import datetime
 
-MONGO_URI = os.getenv("MONGO_URI", "")
-DB_NAME = os.getenv("DB_NAME", "botxcore_aio")
+MONGO_URI = "mongodb+srv://bb:bb@cluster0.wvo3g4y.mongodb.net/?appName=Cluster0"
+DB_NAME = "botxcore_aio"
 
 client: AsyncIOMotorClient = None
 db = None

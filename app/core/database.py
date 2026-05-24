@@ -11,14 +11,18 @@ db = None
 async def init_db():
     global client, db
     if not MONGO_URI:
+        print("DEBUG: MONGO_URI is empty")
         return
     try:
+        print(f"DEBUG: Connecting to MongoDB... (URI: {MONGO_URI[:20]}...)")
         client = AsyncIOMotorClient(MONGO_URI, serverSelectionTimeoutMS=5000)
         db = client[DB_NAME]
         await client.admin.command('ping')
+        print("DEBUG: MongoDB connected successfully")
         await _ensure_indexes()
         await _seed_admin()
-    except Exception:
+    except Exception as e:
+        print(f"DEBUG: MongoDB connection failed: {e}")
         client = None
         db = None
 
